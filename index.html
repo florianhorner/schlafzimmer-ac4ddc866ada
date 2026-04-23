@@ -3,13 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schlafzimmer Design</title>
+<title>Penthouse · Schlafzimmer · München</title>
+<meta name="description" content="Vier Designs. Vier Stimmungen. Ein Bett hinter dem wir uns einigen müssen.">
+<meta property="og:title" content="Das Schlafzimmer deiner Träume. Was wählst du?">
+<meta property="og:description" content="Vier Designs für unser Penthouse-Schlafzimmer. Stimm ab.">
+<meta property="og:image" content="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/a03a3551-f526-4c90-89e8-8bd0a32b67d5.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Das Schlafzimmer deiner Träume. Was wählst du?">
+<meta name="twitter:image" content="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/a03a3551-f526-4c90-89e8-8bd0a32b67d5.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+/* ── GRAIN TEXTURE ── */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px 128px}
 :root{
   --ff-d:'Cormorant Garamond',Georgia,serif;
   --ff-b:'DM Sans',sans-serif;
@@ -56,6 +66,12 @@ button{cursor:pointer;font-family:var(--ff-b);background:none;border:none}
 .hero-sub{font-size:var(--ts-base);color:var(--txt-m);max-width:50ch;line-height:1.72;margin-bottom:var(--sp10)}
 .hero-cta{display:inline-flex;align-items:center;gap:var(--sp3);font-size:var(--ts-sm);letter-spacing:.13em;text-transform:uppercase;color:var(--txt);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color var(--tr),gap var(--tr)}
 .hero-cta:hover{color:var(--gold);gap:var(--sp5)}
+/* staggered hero entrance */
+@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+#screen-intro.active .eyebrow{animation:heroIn .7s cubic-bezier(.16,1,.3,1) .1s both}
+#screen-intro.active .hero-h{animation:heroIn .9s cubic-bezier(.16,1,.3,1) .22s both}
+#screen-intro.active .hero-sub{animation:heroIn .8s cubic-bezier(.16,1,.3,1) .38s both}
+#screen-intro.active .hero-cta{animation:heroIn .7s cubic-bezier(.16,1,.3,1) .52s both}
 .hero-scroll{display:none}
 
 /* ══ VOTING SCREEN ══ */
@@ -102,7 +118,7 @@ button{cursor:pointer;font-family:var(--ff-b);background:none;border:none}
 .card-led{font-size:var(--ts-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
 .card-desc{font-size:var(--ts-sm);color:var(--txt-m);line-height:1.8;flex-grow:1}
 .card-specs{display:flex;gap:var(--sp6);flex-wrap:wrap;padding-top:var(--sp2)}
-.spec dt{font-size:var(--ts-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--txt-f)}
+.spec dt{font-size:var(--ts-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--txt-m)}
 .spec dd{font-size:var(--ts-sm);font-weight:500;margin-top:2px}
 .vote-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:var(--sp4) var(--sp5);border:1px solid var(--bord2);border-radius:var(--r-lg);color:var(--txt-m);font-size:var(--ts-sm);letter-spacing:.1em;text-transform:uppercase;transition:all var(--tr)}
 .vote-btn:hover{border-color:var(--ac);color:var(--ac);background:color-mix(in oklch,var(--ac) 6%,transparent)}
@@ -209,7 +225,7 @@ button{cursor:pointer;font-family:var(--ff-b);background:none;border:none}
       <p class="hero-sub">Vier Designs. Vier Stimmungen. Ein Bett hinter dem wir uns einigen müssen.</p>
       <button class="hero-cta" onclick="showVote()">
         Alle vier Optionen ansehen
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
     </div>
     <div class="hero-scroll"><div class="sline"></div><span>Scroll</span></div>
