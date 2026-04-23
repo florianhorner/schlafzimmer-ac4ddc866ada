@@ -39,7 +39,8 @@ button{cursor:pointer;font-family:var(--ff-b);background:none;border:none}
 /* ── SCREENS ── */
 .screen{display:none;min-height:100dvh}
 .screen.active{display:block}
-#screen-intro{display:flex;flex-direction:column}
+#screen-intro{flex-direction:column}
+#screen-intro.active{display:flex}
 
 /* ══ INTRO / HERO ══ */
 .hero{position:relative;height:100dvh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
@@ -59,7 +60,6 @@ button{cursor:pointer;font-family:var(--ff-b);background:none;border:none}
 @keyframes sl{0%,100%{opacity:1}50%{opacity:.25;transform:translateY(6px)}}
 
 /* ══ VOTING SCREEN ══ */
-#screen-vote{display:none}
 .vote-header{position:sticky;top:0;z-index:50;background:oklch(.05 .01 80/.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bord);padding:var(--sp4) var(--sp10);display:flex;align-items:center;justify-content:space-between;gap:var(--sp4)}
 .vote-logo{font-family:var(--ff-d);font-size:var(--ts-lg);font-weight:300;letter-spacing:.12em;color:var(--txt-m)}
 .progress-wrap{display:flex;align-items:center;gap:var(--sp4);flex:1;justify-content:center}
